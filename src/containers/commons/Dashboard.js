@@ -19,9 +19,9 @@ class Dashboard extends Component {
     return (
         <Layout>
         <Content style={{ padding: '0 0' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Kyambogo University, Kampala</Breadcrumb.Item>
-        </Breadcrumb>
+          <Breadcrumb style={{ margin: '16px 0' }}>
+            <Breadcrumb.Item>Kyambogo University, Kampala</Breadcrumb.Item>
+          </Breadcrumb>
           {renderHome ? (
             <DashboardSideNav />
           ): renderCourses? (
@@ -37,7 +37,6 @@ class Dashboard extends Component {
           ): (
             <DashboardSideNav />
           )
-          
           }
       </Content>
       </Layout>

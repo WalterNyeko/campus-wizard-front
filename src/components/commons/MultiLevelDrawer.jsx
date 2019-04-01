@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {
-    Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon,List, Avatar, Divider,
+    Drawer, Button, Col, Row, Divider,
   } from 'antd';
-  
-const { Option } = Select;
   
 
   const pStyle = {
@@ -115,7 +113,7 @@ export default class MultiLevelDrawer extends Component {
           <DescriptionItem title="Department" content="AFX" />
         </Col>
         <Col span={12}>
-          <DescriptionItem title="Supervisor" content={<a>Lin</a>} />
+          <DescriptionItem title="Supervisor" content={<a href="/">Lin</a>} />
         </Col>
       </Row>
       <Row>
@@ -141,8 +139,8 @@ export default class MultiLevelDrawer extends Component {
           <DescriptionItem
             title="Github"
             content={(
-              <a href="http://github.com/ant-design/ant-design/">
-                github.com/ant-design/ant-design/
+              <a href="/">
+                github.com/walternyeko/campus_front/
               </a>
             )}
           />
