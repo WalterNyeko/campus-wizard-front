@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../../components/assets/styles/steps.css';
 import '../../components/assets/styles/landingPage.css';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { steps } from '../../fixtures/Steps';
+import { message } from 'antd';
 import LandingPageComponent from '../../components/home/LandingPage';
 
 class LandingPage extends Component {
@@ -11,6 +12,9 @@ class LandingPage extends Component {
         this.state = {
           current: 0,
         };
+        this.next = this.next.bind(this);
+        this.previous = this.previous.bind(this);
+        this.welcomeHome = this.welcomeHome.bind(this);
       }
 
     /**
@@ -19,7 +23,7 @@ class LandingPage extends Component {
      * 
      * @returns {void}
      */
-    next() {
+    next = () => {
         const current = this.state.current + 1;
         this.setState({ current });
     }
@@ -30,9 +34,24 @@ class LandingPage extends Component {
      * 
      * @returns {void}
      */
-    previous() {
+    previous = () => {
         const current = this.state.current - 1;
         this.setState({ current });
+    }
+
+    /**
+     * takes the user to the welcome page
+     * shows welcome message
+     * 
+     * @param {String} message
+     * 
+     * @returns {JSX}
+     */
+    welcomeHome = (userMessage) => {
+      message.success(userMessage);
+      return (
+        <Redirect to="/home" />
+      )
     }
 
   render() {
@@ -42,7 +61,8 @@ class LandingPage extends Component {
           <LandingPageComponent
             current={current}
             next={this.next}
-            previous={this.previous}/>
+            previous={this.previous}
+            welcomeHome={this.welcomeHome}/>
         </React.Fragment>
     )
   }

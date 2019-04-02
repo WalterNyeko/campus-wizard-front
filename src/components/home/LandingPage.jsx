@@ -1,12 +1,11 @@
 import React from 'react';
-import { Steps, Button, message } from 'antd';
+import { Steps, Button } from 'antd';
 import { steps } from '../../fixtures/Steps';
 const Step = Steps.Step;
 
-function LandingPage({current, next, previous}) {
+function LandingPage({current, next, previous, welcomeHome}) {
   return (
     <React.Fragment>
-
         <div className="row">
             <div className="col-md-1"></div>
               <div className="col-md-10">
@@ -22,7 +21,7 @@ function LandingPage({current, next, previous}) {
                     }
                     {
                       current === steps.length - 1
-                      && <Button type="primary" onClick={() => message.success('Application process complete!')}>Done</Button>
+                      && <Button type="primary" onClick={() => welcomeHome('Thank you for applying')}>Done</Button>
                     }
                     {
                       current > 0
