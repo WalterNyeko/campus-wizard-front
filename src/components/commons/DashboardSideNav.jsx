@@ -7,6 +7,7 @@ import {
 } from 'antd';
 import { columns } from '../../fixtures/Columns';
 import { data } from '../../fixtures/Data';
+import '../assets/styles/tabs.css';
 
 export default function DashboardSideNav({ width, collapsed, onChange, onCollapse}) {
     const {
@@ -15,15 +16,20 @@ export default function DashboardSideNav({ width, collapsed, onChange, onCollaps
     const SubMenu = Menu.SubMenu;
     const TabPane = Tabs.TabPane;
   return (
-    <Layout style={{ minHeight: '85vh', margin: '1px 2px 2px 1px' }}>
+    <React.Fragment>
+    <Layout style={{ minHeight: '85vh', margin: '0' }}>
         <Sider
           collapsible
           collapsed={collapsed}
           onCollapse={onCollapse}
           width={width}
+          style={{
+            borderRadius: '5px',
+            backgroundColor: 'transparent'
+          }}
         >
           <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+          <Menu theme="light" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
               <Icon type="pie-chart" />
               <span>Option 1</span>
@@ -54,18 +60,15 @@ export default function DashboardSideNav({ width, collapsed, onChange, onCollaps
           </Menu>
         </Sider>
         <Layout>
-          <Content style={{ padding: '0 24px', backgroundColor: '#fff', minHeight: 585}}>
+          <div className="card-container">
           <Tabs type="card" style={{ 
-            borderLeft: '1px solid grey', 
-            borderRight: '1px solid grey', 
-            borderBottom: '1px solid grey',
-            borderRadius: '5px',
-            minHeight: '600px',
-            maxHeight: '600px',
-            scroll: 'auto'}}>
+            minHeight: '100vh',
+            padding: '0 24px'
+            }}>
             {allCourses.map((element, index) =>(
                 <TabPane tab={element.faculty} key={index} style={{
-                  padding: '10px'
+                  padding: '10px',
+                  minHeight: '650px',
                 }}>
                 <Row gutter={16}>
                 <Col className="gutter-row" span={6}>
@@ -83,9 +86,10 @@ export default function DashboardSideNav({ width, collapsed, onChange, onCollaps
                 </TabPane>
               ))}
           </Tabs>
-        </Content>
-          <TheFooter />
+          </div>
         </Layout>
       </Layout>
+      <TheFooter />
+      </React.Fragment>
   )
 }
