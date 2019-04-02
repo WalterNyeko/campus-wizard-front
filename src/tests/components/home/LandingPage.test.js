@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import LandingPage from '../../../containers/home/LandingPage';
-import { wrap } from 'module';
 
 describe('Landing Page', () => {
 

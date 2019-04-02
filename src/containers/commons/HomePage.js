@@ -18,7 +18,7 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: false,
       renderAdmission: false,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: false,
     }
 
@@ -30,7 +30,7 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: false,
       renderAdmission: false,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: false,
     })
   }
@@ -41,7 +41,7 @@ class Navbar extends Component {
       renderCourses: true,
       renderApplicants: false,
       renderAdmission: false,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: false,
     })   
   }
@@ -52,7 +52,7 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: true,
       renderAdmission: false,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: false,
     })    
   }
@@ -63,7 +63,7 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: false,
       renderAdmission: true,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: false,
     })   
   }
@@ -74,7 +74,7 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: false,
       renderAdmission: false,
-      renderSettings: true,
+      renderRejected: true,
       renderAccepted: false,
     })    
   }
@@ -85,11 +85,10 @@ class Navbar extends Component {
       renderCourses: false,
       renderApplicants: false,
       renderAdmission: false,
-      renderSettings: false,
+      renderRejected: false,
       renderAccepted: true,
     })    
   }
-
  
 render() {
   const {
