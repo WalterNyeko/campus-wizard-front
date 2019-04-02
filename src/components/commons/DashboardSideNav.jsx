@@ -54,10 +54,19 @@ export default function DashboardSideNav({ width, collapsed, onChange, onCollaps
           </Menu>
         </Sider>
         <Layout>
-          <Content style={{ padding: '0 24px', backgroundColor: '#fff', minHeight: 585, overflow: 'scroll' }}>
-          <Tabs type="card">
+          <Content style={{ padding: '0 24px', backgroundColor: '#fff', minHeight: 585}}>
+          <Tabs type="card" style={{ 
+            borderLeft: '1px solid grey', 
+            borderRight: '1px solid grey', 
+            borderBottom: '1px solid grey',
+            borderRadius: '5px',
+            minHeight: '600px',
+            maxHeight: '600px',
+            scroll: 'auto'}}>
             {allCourses.map((element, index) =>(
-                <TabPane tab={element.faculty} key={index}>
+                <TabPane tab={element.faculty} key={index} style={{
+                  padding: '10px'
+                }}>
                 <Row gutter={16}>
                 <Col className="gutter-row" span={6}>
                 </Col>
@@ -74,8 +83,8 @@ export default function DashboardSideNav({ width, collapsed, onChange, onCollaps
                 </TabPane>
               ))}
           </Tabs>
-      </Content>
-        <TheFooter />
+        </Content>
+          <TheFooter />
         </Layout>
       </Layout>
   )

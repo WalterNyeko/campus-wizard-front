@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Layout, Menu
+  Layout, Menu, Avatar
 } from 'antd';
 import Dashboard from './Dashboard';
+
 class Navbar extends Component {
   constructor(props){
     super(props);
@@ -96,13 +97,18 @@ render() {
   } = Layout;
     return (
      <React.Fragment>
-        <Header className="header">
+        <Header className="header" style={{ 
+          height: '66px', 
+          marginLeft: '0', 
+          backgroundColor: '#1DA1F2', 
+          width: '100%',
+          borderBottom: '1px solid black', }}>
         <div className="logo" />
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['1']}
-          style={{ lineHeight: '64px', marginLeft: '0' }}
+          style={{ lineHeight: '64px', backgroundColor: '#1DA1F2', width: '100%' }}
         >
           <Menu.Item key="1" onClick={()=>this.renderHomePage()}>Home</Menu.Item>
           <Menu.Item key="2" onClick={()=>this.renderCoursesPage()}>Courses</Menu.Item>
@@ -110,7 +116,8 @@ render() {
           <Menu.Item key="4" onClick={()=>this.renderAdmissionsPage()}>Admission</Menu.Item>
           <Menu.Item key="5" onClick={()=>this.renderRejectedPage()}>Rejected</Menu.Item>
           <Menu.Item key="6" onClick={()=>this.renderAcceptedPage()}>Accepted</Menu.Item>
-          <Menu.Item key="7" onClick={()=>this.renderAcceptedPage()}>Projects/Research</Menu.Item>
+          <Menu.Item key="7" onClick={()=>this.renderAcceptedPage()}>Projects</Menu.Item>
+          <Avatar size={64} icon="user" style={{ float: 'right' }}/>
         </Menu>
     </Header>
       <Dashboard 

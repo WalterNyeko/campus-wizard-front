@@ -26,7 +26,7 @@ class DashboardSideNav extends Component {
     return (
         <React.Fragment>
           <DashboardSideNavComponent 
-            width="300"
+            width="250"
             collapsed={collapsed}
             onCollapse={this.onCollapse}
             onChange={this.onChange}/>

@@ -20,7 +20,7 @@ class Dashboard extends Component {
         <Layout>
         <Content style={{ padding: '0 0' }}>
           <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>Kyambogo University, Kampala</Breadcrumb.Item>
+            <Breadcrumb.Item style={{ marginLeft: '50px', fontSize: '18px'}}>Makerere University, Kampala</Breadcrumb.Item>
           </Breadcrumb>
           {renderHome ? (
             <DashboardSideNav />
